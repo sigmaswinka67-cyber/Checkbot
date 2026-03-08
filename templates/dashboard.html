@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bot Monitor</title>
+</head>
+
+<body>
+
+<h1>Bot Monitor</h1>
+
+<table border="1">
+<tr>
+<th>Bot</th>
+<th>Status</th>
+<th>Last Seen</th>
+</tr>
+
+{% for bot in bots %}
+
+<tr>
+<td>{{bot.id}}</td>
+<td>
+{% if bot.online %}
+🟢 ONLINE
+{% else %}
+🔴 OFFLINE
+{% endif %}
+</td>
+<td>{{bot.last_seen}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
