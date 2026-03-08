@@ -69,10 +69,11 @@ async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif txt == "🔴 Offline bots":
         await update.message.reply_text(format_bots("offline"))
 
-
+print('bot started')
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT, buttons))
+
 
 app.run_polling()
